@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { FiPower, FiClock } from 'react-icons/fi';
 import {
@@ -11,11 +11,13 @@ import {
   Calendar,
   NextAppointment,
   Section,
+  Appointment,
 } from './styles';
 import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/auth';
 
 const Dashboard: React.FC = () => {
+  const [seletedDate, setSeletedDate] = useState(new Date());
   const { signOut, user } = useAuth();
 
   return (
@@ -66,10 +68,54 @@ const Dashboard: React.FC = () => {
 
           <Section>
             <strong>Manhã</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars0.githubusercontent.com/u/12039169?s=460&u=0b26f6cc1de7af99fb3efbfe4da57670a6fe4323&v=4"
+                  alt="Enio"
+                />
+                <strong>Enio L. Sombra</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars0.githubusercontent.com/u/12039169?s=460&u=0b26f6cc1de7af99fb3efbfe4da57670a6fe4323&v=4"
+                  alt="Enio"
+                />
+                <strong>Enio L. Sombra</strong>
+              </div>
+            </Appointment>
           </Section>
 
           <Section>
             <strong>Tarde</strong>
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars0.githubusercontent.com/u/12039169?s=460&u=0b26f6cc1de7af99fb3efbfe4da57670a6fe4323&v=4"
+                  alt="Enio"
+                />
+                <strong>Enio L. Sombra</strong>
+              </div>
+            </Appointment>
           </Section>
         </Schedule>
 
